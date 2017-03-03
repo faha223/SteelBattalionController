@@ -1,0 +1,6 @@
+; Exports.def : Declares the module parameters.
+
+LIBRARY     "SteelBattalionController.DLL"
+
+EXPORTS
+        DllGetClassObject   PRIVATE

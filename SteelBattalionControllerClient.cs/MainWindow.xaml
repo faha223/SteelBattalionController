@@ -1,0 +1,78 @@
+﻿<Window x:Class="SteelBattalionControllerClient.cs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SteelBattalionControllerClient.cs"
+        mc:Ignorable="d"
+        Title="Steel Battalion Controller Test" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock Text="{Binding Controller.Gear, StringFormat='Gear: {0}'}" />
+            <TextBlock Text="{Binding Controller.Rotation, StringFormat='Rotation: {0}'}" />
+            <TextBlock Text="{Binding Controller.SightChangeX, StringFormat='Sight Change X: {0}'}" />
+            <TextBlock Text="{Binding Controller.SightChangeY, StringFormat='Sight Change Y: {0}'}" />
+            <TextBlock Text="{Binding Controller.SightChangePressed, StringFormat='Sight Change Pressed: {0}'}" />
+            <TextBlock Text="{Binding Controller.OxygenSupplyEnabled, StringFormat='Oxygen Supply System Enabled: {0}'}" />
+            <TextBlock Text="{Binding Controller.FilterControlSystemEnabled, StringFormat='Filter Control System Enabled: {0}'}" />
+            <TextBlock Text="{Binding Controller.VTLocationMeasurementEnabled, StringFormat='VT Location Measurement Enabled: {0}'}" />
+            <TextBlock Text="{Binding Controller.BufferMaterialEnabled, StringFormat='Buffer Material System Enabled: {0}'}" />
+            <TextBlock Text="{Binding Controller.FuelFlowRateEnabled, StringFormat='Fuel Flow Rate System Enabled: {0}'}" />
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+            <TextBlock Text="{Binding Controller.TunerDial, StringFormat='Tuner Channel: {0}'}" />
+            <TextBlock Text="{Binding Controller.Comm1Pressed, StringFormat='Comm1: {0}'}" />
+            <TextBlock Text="{Binding Controller.Comm2Pressed, StringFormat='Comm2: {0}'}" />
+            <TextBlock Text="{Binding Controller.Comm3Pressed, StringFormat='Comm3: {0}'}" />
+            <TextBlock Text="{Binding Controller.Comm4Pressed, StringFormat='Comm4: {0}'}" />
+            <TextBlock Text="{Binding Controller.Comm5Pressed, StringFormat='Comm5: {0}'}" />
+            <TextBlock Text="{Binding Controller.F1Pressed, StringFormat='F1: {0}'}" />
+            <TextBlock Text="{Binding Controller.F2Pressed, StringFormat='F2: {0}'}" />
+            <TextBlock Text="{Binding Controller.F3Pressed, StringFormat='F3: {0}'}" />
+            <TextBlock Text="{Binding Controller.TankDetachPressed, StringFormat='Tank Detach: {0}'}" />
+            <TextBlock Text="{Binding Controller.OverridePressed, StringFormat='Override: {0}'}" />
+            <TextBlock Text="{Binding Controller.NightScopePressed, StringFormat='Night Scope: {0}'}" />
+            <TextBlock Text="{Binding Controller.ForecastShootingSystemPressed, StringFormat='Forecast Shooting System: {0}'}" />
+            <TextBlock Text="{Binding Controller.ManipulatorPressed, StringFormat='Manipulator: {0}'}" />
+            <TextBlock Text="{Binding Controller.LineColorChangePressed, StringFormat='Line Color Change: {0}'}" />
+            <TextBlock Text="{Binding Controller.WashingPressed, StringFormat='Washing: {0}'}" />
+            <TextBlock Text="{Binding Controller.ExtinguisherPressed, StringFormat='Extinguisher: {0}'}" />
+            <TextBlock Text="{Binding Controller.ChaffPressed, StringFormat='Chaff: {0}'}" />
+            <TextBlock Text="{Binding Controller.MainWeaponControlPressed, StringFormat='Main Weapon Control: {0}'}" />
+            <TextBlock Text="{Binding Controller.SubWeaponControlPressed, StringFormat='Sub Weapon Control: {0}'}" />
+            <TextBlock Text="{Binding Controller.MagazineChangePressed, StringFormat='Magazine Change: {0}'}" />
+        </StackPanel>
+        <StackPanel Grid.Column="4">
+            <TextBlock Text="{Binding Controller.AimingX, StringFormat='Aiming X: {0}'}" />
+            <TextBlock Text="{Binding Controller.AimingY, StringFormat='Aiming Y: {0}'}" />
+            <TextBlock Text="{Binding Controller.LockOnPressed, StringFormat='Lock On: {0}'}" />
+            <TextBlock Text="{Binding Controller.MainWeaponFirePressed, StringFormat='Main Weapon: {0}'}" />
+            <TextBlock Text="{Binding Controller.SubWeaponFirePressed, StringFormat='Fire: {0}'}" />
+            <TextBlock Text="{Binding Controller.MultiMonitorOpenClosePressed, StringFormat='Multi Monitor Open/Close: {0}'}" />
+            <TextBlock Text="{Binding Controller.MultiMonitorModeSelectPressed, StringFormat='Multi Monitor Mode Select: {0}'}" />
+            <TextBlock Text="{Binding Controller.MainMonitorZoomInPressed, StringFormat='Main Monitor Zoom In: {0}'}" />
+            <TextBlock Text="{Binding Controller.MultiMonitorMapZoomPressed, StringFormat='Multi Monitor Map Zoom In/Out: {0}'}" />
+            <TextBlock Text="{Binding Controller.SubMonitorModeSelectPressed, StringFormat='Sub Monitor Mode Select: {0}'}" />
+            <TextBlock Text="{Binding Controller.MainMonitorZoomOutPressed, StringFormat='Main Monitor Zoom Out: {0}'}" />
+            <TextBlock Text="{Binding Controller.StartPressed, StringFormat='Start: {0}'}" />
+            <TextBlock Text="{Binding Controller.IgnitionPressed, StringFormat='Ignition: {0}'}" />
+            <TextBlock Text="{Binding Controller.CockpitHatchPressed, StringFormat='Cockpit Hatch: {0}'}" />
+            <TextBlock Text="{Binding Controller.EjectPressed, StringFormat='Eject: {0}'}" />
+        </StackPanel>
+        <TextBlock Grid.Row="2" Text="{Binding Controller.Strafe, StringFormat='Strafe: {0}'}" />
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Controller.Brake, StringFormat='Brake: {0}'}" />
+        <TextBlock Grid.Row="2" Grid.Column="4" Text="{Binding Controller.Gas, StringFormat='Gas: {0}'}" />
+    </Grid>
+</Window>

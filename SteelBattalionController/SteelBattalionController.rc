@@ -1,0 +1,16 @@
+//
+// SteelBattalionController.rc
+//
+
+
+#include <windows.h>
+#include <ntverp.h>
+#include "resource.h"
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "WUDF: SteelBattalionController"
+#define VER_INTERNALNAME_STR        "SteelBattalionController"
+#define VER_ORIGINALFILENAME_STR    "SteelBattalionController.dll"
+
+#include "common.ver"
