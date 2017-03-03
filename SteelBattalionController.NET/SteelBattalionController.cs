@@ -1108,6 +1108,8 @@ namespace Net
             byte[] controllerStateBytes = new byte[Marshal.SizeOf(controller)];
             IntPtr ptr = IntPtr.Zero;
 
+            var server = this.server; // Create a copy
+
             do
             {
                 try
@@ -1152,9 +1154,15 @@ namespace Net
                 }
             } while (server.IsConnected);
 
-            server.Dispose();
-            server = null;
-            Connect();
+            lock (this)
+            {
+                if (server != null)
+                {
+                    server.Dispose();
+                    server = null;
+                    Connect();
+                }
+            }
         }
 
         #region Helpers
@@ -1245,13 +1253,16 @@ namespace Net
 
         public void Dispose()
         {
-            if (server != null)
+            lock (this)
             {
-                if (server.IsConnected)
-                    server.Disconnect();
-                server.Dispose();
-                iar = null;
-                server = null;
+                if (server != null)
+                {
+                    if (server.IsConnected)
+                        server.Disconnect();
+                    server.Dispose();
+                    iar = null;
+                    server = null;
+                }
             }
             if (listeningThread != null)
             {
