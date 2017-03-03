@@ -1085,10 +1085,13 @@ namespace Net
         private void driverConnected(IAsyncResult ar)
         {
             iar = null;
-            server.EndWaitForConnection(ar);
-            listeningThread = new Thread(listeningThreadFunc);
-            listeningThread.IsBackground = true;
-            listeningThread.Start();
+            if(server != null) // This may have happened as a result of the server being disposed and nullified
+            {
+                server.EndWaitForConnection(ar);
+                listeningThread = new Thread(listeningThreadFunc);
+                listeningThread.IsBackground = true;
+                listeningThread.Start();
+            }
         }
 
         private void listeningThreadFunc()
